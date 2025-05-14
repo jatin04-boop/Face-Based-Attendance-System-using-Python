@@ -1,48 +1,3 @@
-# Face-Based-Attendance-System-using-Python
-using Python
-
-# Face-Based Attendance System 👨‍💻📷
-
-A smart and secure attendance system using facial recognition, built with Python. The system features:
-
-- Real-time face recognition using webcam
-- Anti-spoofing: head movement and blink detection
-- Mask detection to ensure valid attendance
-- Buzzer alert for unknown faces
-- GUI Dashboard using Tkinter
-- Cloud sync to Google Sheets
-- Attendance logging in CSV
-
----
-
-## 🔧 Features
-
-| Feature | Description |
-|--------|-------------|
-| 🧠 Anti-Spoofing | Detects eye blinks and head movement |
-| 😷 Mask Detection | Blocks masked face attendance |
-| 🔔 Unauthorized Alert | Plays buzzer for unknown faces |
-| ☁️ Cloud Sync | Stores attendance in Google Sheets |
-| 📊 CSV Logs | Stores attendance locally in a CSV |
-| 🖥️ GUI | Tkinter GUI dashboard |
-| 🕒 Smart Camera | Automatically starts/stops based on time |
-
----
-
-## 🧰 Tech Stack
-
-- Python
-- OpenCV
-- dlib / face_recognition
-- Tkinter
-- threading
-- gspread + Google API (optional)
-
----
-
-## 📸 screenshot
-<img width="947" alt="Screenshot 2025-04-11 at 1 09 43 PM" src="https://github.com/user-attachments/assets/baeb291f-acb0-4e33-ab9a-f94b02daa309" />
-
 # Face-Based Attendance System 👨‍💻📷
 
 A smart and secure attendance system using facial recognition, built with Python. The system features:
@@ -62,11 +17,11 @@ A smart and secure attendance system using facial recognition, built with Python
 | Feature               | Description                              |
 | --------------------- | ---------------------------------------- |
 | 🧠 Anti-Spoofing      | Detects eye blinks and head movement     |
-| 🤷 Mask Detection     | Blocks masked face attendance            |
+| 😷 Mask Detection     | Blocks masked face attendance            |
 | 🔔 Unauthorized Alert | Plays buzzer for unknown faces           |
 | ☁️ Cloud Sync         | Stores attendance in Google Sheets       |
 | 📊 CSV Logs           | Stores attendance locally in a CSV       |
-| 💺 GUI                | Tkinter GUI dashboard                    |
+| 🖥️ GUI               | Tkinter GUI dashboard                    |
 | 🕒 Smart Camera       | Automatically starts/stops based on time |
 
 ---
@@ -82,13 +37,17 @@ A smart and secure attendance system using facial recognition, built with Python
 
 ---
 
-## ▶️ How to Run
+## 📸 Screenshot
 
-### 🚀 Full Setup Guide
+<img width="947" alt="Screenshot 2025-04-11 at 1 09 43 PM" src="https://github.com/user-attachments/assets/baeb291f-acb0-4e33-ab9a-f94b02daa309" />
+
+---
+
+## 🚀 How to Run the Face-Based Attendance System
 
 This is a complete guide to set up, run, and use the Face Recognition Attendance System with anti-spoofing features such as blink detection and head movement detection.
 
-### 🧹 Prerequisites
+### 🧩 Prerequisites
 
 Ensure the following are installed on your system:
 
@@ -98,9 +57,9 @@ Ensure the following are installed on your system:
 * OS: Windows, macOS, or Linux
 * Required file: [`shape_predictor_68_face_landmarks.dat`](http://dlib.net/files/shape_predictor_68_face_landmarks.dat.bz2) → Place it in the project folder after downloading and extracting
 
----
+### 📥 1. Clone or Download the Project
 
-### 📅 1. Clone or Download the Project
+Clone this repository:
 
 ```bash
 git clone https://github.com/yourusername/FaceAttendanceSystem.git
@@ -108,8 +67,6 @@ cd FaceAttendanceSystem
 ```
 
 Or manually download the ZIP and extract it.
-
----
 
 ### 📦 2. Install Required Python Packages
 
@@ -125,34 +82,32 @@ Or install manually:
 pip install opencv-python face_recognition dlib numpy pandas Pillow scipy gspread oauth2client
 ```
 
----
+### 🧾 3. Project Structure
 
-### 📟 3. Project Structure
+Make sure your folders look like this:
 
 ```
 FaceAttendanceSystem/
 ├── faces/                          # Registered faces saved as images
 ├── attendance/                     # Attendance logs as Excel/CSV files
-├── main.py                         # Main Python GUI script
+├── attendance_system.py            # Main Python GUI script
 ├── shape_predictor_68_face_landmarks.dat  # Required for facial landmark detection
 ├── credentials.json                # Google API credentials (optional)
 ```
 
 ✅ `faces/` and `attendance/` folders are auto-created if not present.
 
----
-
 ### ▶️ 4. Run the Project
 
-Start the app with:
+Start the application using:
 
 ```bash
 python attendance_system.py
 ```
 
----
+### 🖥️ 5. GUI Controls
 
-## 💺 5. GUI Controls
+After launching, you'll see a GUI with the following buttons:
 
 | Button              | Description                                                                |
 | ------------------- | -------------------------------------------------------------------------- |
@@ -161,32 +116,28 @@ python attendance_system.py
 | **View Attendance** | Open today's attendance Excel/CSV                                          |
 | **Show Registered** | View all registered persons                                                |
 
----
-
-## 👁️‍🔮 6. How It Works
+### 👁️‍🗨️ 6. How It Works
 
 The system uses your webcam to detect and recognize faces in real-time.
 
-To mark attendance:
+For a person to be marked present:
 
-* The face must match a known person in `/faces/`
-* Eye blink and head movement must be detected (anti-spoofing)
-* Mask must not be present on the face
-* If matched and validated, name is marked present in `/attendance/attendance_YYYY-MM-DD.xlsx`
+* Face must match a known face from `faces/`
+* Eye blink and head movement (anti-spoofing) must be detected
+* No mask should be detected on the face
 
----
+Once validated:
 
-## 📌 Notes
+* Their name is marked in `attendance/attendance_YYYY-MM-DD.xlsx`
 
-* Register faces in well-lit environments for higher accuracy
-* Use `Name_RollNo` format when saving names (e.g., `John_101`)
-* Anti-spoofing is enforced: static photos/videos won’t pass detection
+### 📌 Notes
 
----
+* Register faces in well-lit environments for better accuracy.
+* Use `Name_RollNo` format when saving names (e.g., `John_101`).
+* Anti-spoofing is enforced: static photos or videos won't pass detection.
 
-## 🪼 7. Reset Attendance for New Day
+### 🧼 7. Reset Attendance for New Day
 
-* Attendance is saved daily in a new file
-* To reset in-memory session for testing, just restart the app
+The system automatically logs new attendance each day in a new file. To clear session memory (for repeated testing), restart the app.
 
 ---
