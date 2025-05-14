@@ -141,3 +141,17 @@ Once validated:
 The system automatically logs new attendance each day in a new file. To clear session memory (for repeated testing), restart the app.
 
 ---
+
+## 🌐 Author
+
+**Your Name**
+Java Developer & Student
+GitHub: [@jatin04-boop](https://github.com/jatin04-boop)
+
+---
+
+## ✉️ License
+
+MIT License
+
+Feel free to use, modify, and share.
