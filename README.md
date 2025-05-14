@@ -147,7 +147,7 @@ FaceAttendanceSystem/
 Start the app with:
 
 ```bash
-python main.py
+python attendance_system.py
 ```
 
 ---
