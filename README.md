@@ -39,3 +39,7 @@ A smart and secure attendance system using facial recognition, built with Python
 - gspread + Google API (optional)
 
 ---
+
+## 📸 screenshot
+<img width="947" alt="Screenshot 2025-04-11 at 1 09 43 PM" src="https://github.com/user-attachments/assets/baeb291f-acb0-4e33-ab9a-f94b02daa309" />
+
