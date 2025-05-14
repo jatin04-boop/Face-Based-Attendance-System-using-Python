@@ -39,10 +39,3 @@ A smart and secure attendance system using facial recognition, built with Python
 - gspread + Google API (optional)
 
 ---
-
-## ▶️ How to Run
-
-### 1. Clone the Repo
-```bash
-git clone https://github.com/yourusername/FaceAttendanceSystem.git
-cd FaceAttendanceSystem
